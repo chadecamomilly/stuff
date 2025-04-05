@@ -1,0 +1,189 @@
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+:root{
+    --cor-fundo-bg: #e5d0d8;
+    --cor-fundo-bt: #e8abc1;
+    --cor-fundo-bt-hover: #e37da2;
+    --cor-fundo-bt-dois: #e4e0e2;
+    --cor-texto-dstq: #955b70;
+    --cor-texto: #3d3b3c;
+}
+
+body {
+    background-color:var(--cor-fundo-bg);
+    background-image: url("/lilys/views/patinhas.gif");
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--cor-texto);
+  }
+
+.img-top{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px; 
+  height: auto;
+  z-index:0;
+  }
+
+  
+.container {
+    width: 100%;
+    padding: 20px;
+  }
+
+.tabs-box{
+    background-color: white;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 4%);
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index:99999;
+}
+  
+h1, h2 {
+    color: var(--cor-texto-dstq);
+  }
+  
+.tab button {
+    flex: 1;
+    background-color: var(--cor-fundo-bt);
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.6s;
+    z-index:99999;
+  }
+  
+.tab button:hover {
+    background-color: var(--cor-fundo-bt-hover);
+  }
+
+.tab button.active {
+    background-color: var(--cor-texto-dstq);
+}
+
+.tab-conteudo {
+    margin-top:20px;
+    display: none;
+  }
+
+.box-descricao{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.campo-maior{
+    flex:3;
+    min-width:200px;
+}
+
+.campo-medio{
+    flex:2;
+    min-width:100px;
+}
+
+.campo-menor{
+    flex:1;
+    min-width:60px;
+}
+  
+input[type="text"], [type="number"]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.btnForm{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btnForm:hover{
+    background-color: var(--cor-fundo-bt-dois);
+    border: 1px solid var(--cor-fundo-bt-dois);
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+  
+.tabela-listagem {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-listagem th, .tabela-listagem td {
+  padding: 12px;
+  text-align: left;
+}
+
+.tabela-listagem th {
+  background-color: var(--cor-fundo-bt);
+  color: white;
+  font-weight: bold;
+}
+
+.tabela-listagem tr:nth-child(even) {
+  background-color: var(--cor-fundo-bt-dois);
+}
+
+.tabela-listagem tr:hover {
+  background-color: var(--cor-fundo-bt-hover);
+  color: white;
+  transition: 0.3s;
+}
+
+.tabela-listagem td {
+  border-bottom: 1px solid #ddd;
+  color: var(--cor-texto);
+}
+
+.tabela-listagem tr:last-child td {
+  border-bottom: none;
+}

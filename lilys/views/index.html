@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de banco de dados</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <img src="/lilys/views/coracoes.gif" class="img-top" alt="coracoes">
+  <div class="container">
+    <div class="tabs-box">
+      <div class="tab">
+        <button class="tab-button active" onclick="openTab('criar-db')">Criar Banco</button>
+        <button class="tab-button" onclick="openTab('criar-tabela')">Criar Tabela</button>
+        <button class="tab-button" onclick="openTab('inserir-dados')">Inserir Registro</button>
+        <button class="tab-button" onclick="openTab('listar-dados')">Listar Registros</button>
+      </div>
+
+      <div id="criar-db" class="tab-conteudo">
+        <p>
+          <label for="nomeBanco">Banco de dados:</label><br>
+          <input type="text" id="nomeBanco" name="nomeBanco" autofocus>
+        </p>
+        <p>
+          <input type="button" class="btnForm" id="btnCriarBanco" value="Criar Banco">
+        </p>
+        <p id="mensagem"></p>
+      </div>
+
+
+      <div id="criar-tabela" class="tab-conteudo">
+        <label for="bd-op">Banco de dados:</label>
+        <select name="lista" id="bd-op">
+          <option value="">Selecione um banco</option>
+        </select>
+
+        <p><label for="nome-tabela">Nome da tabela:</label><br>
+          <input type="text" size="30" id="nome-tabela" name="nome-tabela" autofocus>
+        </p>
+
+        <p><label for="campos-tabela">Campos:</label><br>
+          <input type="number" id="num-campos" name="num-campos" min="1" max="15" autofocus />
+        </p>
+
+        <div id="campos-container"></div>
+
+        <p>
+          <button onclick="criarTabela()" class="btnForm">Criar Tabela</button>
+        </p>
+        <p id="mensagem-tabela"></p>
+      </div>
+
+      <div id="inserir-dados" class="tab-conteudo">
+        <label for="bd-op">Banco de dados:</label>
+        <select name="lista" id="bd-op-inserir">
+          <option value="">Selecione um banco</option>
+        </select>
+
+        <label for="tabela-op">Tabela:</label>
+        <select name="tabela" id="tabela-op-inserir">
+          <option value="">Selecione uma tabela</option>
+        </select>
+
+        <div id="campos-inserir"></div>
+
+        <p>
+          <button id="btnInserirRegistro" onclick="inserirRegistro()" class="btnForm">Inserir Registro</button>
+        </p>
+
+        <p id="mensagem-inserir"></p>
+      </div>
+
+      <div id="listar-dados" class="tab-conteudo">
+        <label for="banco-op">Escolha um banco:</label>
+<select id="banco-op">
+    <option value="">Selecione um banco</option>
+</select>
+        <label for="tabela-op">Escolha uma tabela:</label>
+        <select id="tabela-op">
+          <option value="">Selecione uma tabela</option>
+        </select>
+
+        <button id="listar-btn" class="btnForm">Listar Dados</button>
+
+        <table border="1" id="dados-tabela" class="tabela-listagem">
+          <thead>
+              <tr id="cabecalho"></tr>
+          </thead>
+          <tbody id="corpo"></tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/lilys/js/app.js"></script>
+</body>
+
+</html>
